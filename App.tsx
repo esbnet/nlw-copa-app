@@ -9,7 +9,8 @@ import { NativeBaseProvider } from "native-base"
 
 import { Loading } from "./src/components/Loading"
 import { AuthContextProvider } from "./src/contexts/AuthContext"
-import { SignIn } from "./src/screens/SignIn"
+// import { SignIn } from "./src/screens/SignIn"
+import { Pools } from "./src/screens/Pools"
 
 import { THEME } from "./src/styles/theme"
 
@@ -24,7 +25,7 @@ export default function App() {
     <NativeBaseProvider theme={THEME}>
       <AuthContextProvider>
         <StatusBar style='inverted' translucent />
-        {fontsLoaded ? <SignIn /> : <Loading />}
+        {fontsLoaded ? <Pools /> : <Loading />}
       </AuthContextProvider>
     </NativeBaseProvider>
   )
