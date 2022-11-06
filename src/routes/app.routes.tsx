@@ -8,7 +8,6 @@ import { useTheme } from 'native-base'
 import { Find } from '../screens/Find'
 import { New } from '../screens/New'
 import { Polls } from '../screens/Polls'
-import { SignIn } from '../screens/SignIn'
 
 const { Navigator, Screen } = createBottomTabNavigator()
 
@@ -49,14 +48,14 @@ export function AppRoutes() {
           tabBarLabel: 'Meus bolões'
         }}
       />
-      <Screen
+      {/* <Screen
         name="signin"
         component={SignIn}
         options={{
           tabBarIcon: ({ color }) => <SoccerBall color={color} size={size} />,
           tabBarLabel: 'Login'
         }}
-      />
+      /> */}
       <Screen
         name="find"
         component={Find}
