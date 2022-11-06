@@ -5,6 +5,7 @@ import { PlusCircle, SoccerBall } from 'phosphor-react-native'
 import { useTheme } from 'native-base'
 
 
+import { Find } from '../screens/Find'
 import { New } from '../screens/New'
 import { Polls } from '../screens/Polls'
 
@@ -32,7 +33,7 @@ export function AppRoutes() {
       }
     }}>
       <Screen
-        name="New"
+        name="new"
         component={New}
         options={{
           tabBarIcon: ({ color }) => <PlusCircle color={color} size={size} />,
@@ -40,12 +41,17 @@ export function AppRoutes() {
         }}
       />
       <Screen
-        name="Pools"
+        name="polls"
         component={Polls}
         options={{
           tabBarIcon: ({ color }) => <SoccerBall color={color} size={size} />,
           tabBarLabel: 'Meus bolões'
         }}
+      />
+      <Screen
+        name="find"
+        component={Find}
+        options={{ tabBarButton: () => null }}
       />
     </Navigator>
   )
