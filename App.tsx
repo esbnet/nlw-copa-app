@@ -2,17 +2,18 @@ import {
   Roboto_400Regular,
   Roboto_500Medium,
   Roboto_700Bold,
-  useFonts,
+  useFonts
 } from "@expo-google-fonts/roboto"
+
 import { StatusBar } from "expo-status-bar"
 import { NativeBaseProvider } from "native-base"
 
 import { Loading } from "./src/components/Loading"
-import { AuthContextProvider } from "./src/contexts/AuthContext"
-// import { SignIn } from "./src/screens/SignIn"
-import { Pools } from "./src/screens/Pools"
+import { Routes } from './src/routes'
 
 import { THEME } from "./src/styles/theme"
+
+import { AuthContextProvider } from './src/contexts/AuthContext'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -25,7 +26,7 @@ export default function App() {
     <NativeBaseProvider theme={THEME}>
       <AuthContextProvider>
         <StatusBar style='inverted' translucent />
-        {fontsLoaded ? <Pools /> : <Loading />}
+        {fontsLoaded ? <Routes /> : <Loading />}
       </AuthContextProvider>
     </NativeBaseProvider>
   )
