@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
+import { useCallback, useState } from "react"
 import { Octicons } from "@expo/vector-icons"
-import { useNavigation } from "@react-navigation/native"
+import { useNavigation, useFocusEffect } from "@react-navigation/native"
 import { Icon, VStack, useToast, FlatList } from "native-base"
 
 import { api } from "../services/api"
@@ -37,9 +37,11 @@ export function Polls() {
     }
   }
 
-  useEffect(() => {
-    fetchPolls()
-  }, [])
+  useFocusEffect(
+    useCallback(() => {
+      fetchPolls()
+    }, [])
+  )
 
   return (
     <VStack flex={1} bgColor='gray.900'>
